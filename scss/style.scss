@@ -1,0 +1,214 @@
+@import 'config';
+@import 'utilities';
+
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    font-size: 18px;
+    font-family: 'Rubik';
+    background-color: $very-dark-blue;
+}
+
+main
+{
+    height: 100vh;
+}
+
+ul
+{
+    list-style: none;
+}
+
+footer
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 0;
+    color: #fff;
+
+    a
+    {
+        text-decoration: none;
+        color: $blue;
+    }
+}
+
+.btn
+{
+    background-color: transparent;
+    border: none;
+    color: $desaturated-blue;
+    font-family: 'Rubik';
+}
+
+.btn:hover
+{
+    cursor: pointer;
+}
+
+.btn:hover, .btn:focus
+{
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+
+
+%card
+{
+    border-radius: 15px;
+}
+
+.profile-card
+{
+    @extend %card;
+    background-color: $dark-blue;
+    grid-row: 1 / span 2;
+
+    .profile-card-heading
+    {
+        @extend %card;
+        height: 70%;
+        background-color: $blue;
+        padding-top: 30px;
+        .pfp
+        {
+            width: 35%;
+            background-color: #fff;
+            padding: 2px;
+            border-radius: 50%;
+            margin-bottom: 30px;
+        }
+
+        p
+        {
+            font-size: 1rem;
+            color: $pale-blue;
+        }
+
+        h1
+        {
+            font-weight: 300;
+            color: #fff;
+        }
+    }
+
+    .options
+    {
+        height: 30%;
+        ul
+        {
+            li
+            {
+                padding-top: 7%;
+            }
+        }
+    }
+}
+
+.info-card
+{
+    @extend %card;
+
+
+    .info-card-img
+    {
+        background-repeat: no-repeat;
+        background-position: top -10px right 10px;
+        height: 18%;
+    }
+
+    .info-card-stats
+    {
+        border-radius: 14px;
+        height: 82%;
+        background-color: $dark-blue;
+
+        .info-card-heading
+        {
+            padding-top: 25px;
+
+            .card-container
+            {
+                justify-content: space-between;
+
+                .title
+                {
+                    color: #fff;
+                    font-weight: 500;
+                }
+
+                img:hover
+                {
+                    filter: brightness(150%);
+                }
+            }
+        }
+
+
+    
+        .info-card-content
+        {
+            padding-top: 18px;
+
+            .current-time-frames
+            {
+                font-weight: 300;
+                color: #fff;
+                font-size: 3.4rem;
+            }
+
+            .previous-time-frames
+            {
+                padding: 5px 0;
+                color: $desaturated-blue;
+                font-size: 0.8rem;
+            }
+        }
+
+    }
+
+    .info-card-stats:hover
+    {
+        background-color: darken($desaturated-blue, 28%);
+        cursor: pointer;
+    }
+}
+
+$themes:
+(
+    'icon-work.svg': $light-orange,
+    'icon-play.svg': $soft-blue,
+    'icon-study.svg': $light-red,
+    'icon-exercise.svg': $lime-green,
+    'icon-social.svg': $violet,
+    'icon-self-care.svg': $soft-orange
+);
+
+$i: 2;
+
+@each $img-name, $bg-color in $themes
+{
+    .info-card:nth-child(#{$i})
+    {
+        background-color: $bg-color;
+        
+        .info-card-img
+        {
+            background-image: url('../images/'+ $img-name);
+        }
+        
+    }
+
+    $i: $i + 1;
+}
+
+
+@import 'mobile';

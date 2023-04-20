@@ -1,0 +1,110 @@
+@media(max-width: 756px)
+{
+    main
+    {
+        min-height: 100%;
+    }
+
+    .attribution
+    {
+        display: none;
+    }
+
+    .grid
+    {
+        grid-template-columns: 1fr;
+    }
+
+    .card-container
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        max-width: 85%;
+    }
+
+    .container
+    {
+        padding: 0 20px;
+    }
+
+    .profile-card
+    {
+        height: 200px;
+        grid-row: 1;
+        .profile-card-heading
+        {
+            padding: 0;
+            .card-container
+            {
+                justify-content: flex-start;
+
+                .pfp
+                {
+                    width: 20%;
+                    margin: 0;
+                }
+    
+                .text
+                {
+                    margin-left: 20px;
+                    h1
+                    {
+                        font-size: 1.5rem;
+                    }
+                }
+                
+            }
+          
+        }
+
+        .options
+        {  
+            
+            ul
+            {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                li
+                {
+                    padding: 0;
+                }
+            }
+        }
+
+    }
+
+    .info-card
+    {
+        height: 150px;
+
+        .info-card-img
+        {
+            height: 25%;
+        }
+
+        .info-card-stats
+        {
+            height: 75%;
+
+            .info-card-content
+            {
+                padding-top: 0;
+
+                .current-time-frames
+                {
+                    font-size: 2.2rem;
+                    padding-right: 10px;
+                }
+        
+            }
+        }
+    }
+
+
+    
+}
