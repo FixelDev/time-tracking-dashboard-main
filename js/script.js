@@ -31,7 +31,7 @@ loadInfoIntoCards(TimeFrames.Daily);
 
 function loadInfoIntoCards(timeFramesType)
 {
-    fetch("../data.json")
+    fetch(window.location.href + "/data.json")
     .then(response => response.json())
     .then(data => 
     {
